@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'widgets/home_top_info.dart';
 import 'widgets/food_category.dart';
 import 'widgets/search_field.dart';
+import 'widgets/bought_foods.dart';
 
 //create homescreen class
 class HomeScreen extends StatefulWidget{
@@ -23,7 +24,33 @@ class _HomeScreenState extends State<HomeScreen>{
          FoodCategory(),
          //creates space above search
          SizedBox(height:20),
-         SerachField()
+         SerachField(),
+         SizedBox(height: 20),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: <Widget>[
+             Text("Frequently Purchased",
+             style:TextStyle(
+               fontSize: 18,
+               fontWeight: FontWeight.bold
+             ),
+             ),
+             GestureDetector(
+               onTap: (){},
+               child: Text("View All",
+               style:TextStyle(
+                 fontSize: 18,
+                 fontWeight: FontWeight.bold,
+                 color: Colors.orangeAccent
+               ),
+               ),
+             ),
+           ],
+           ),
+           SizedBox(height:20),
+           Container(
+             child: BoughtFoods(),
+           ),
         ]
       )
       );
