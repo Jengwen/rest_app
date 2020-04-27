@@ -2,6 +2,16 @@
 import 'package:flutter/material.dart';
 
 class BoughtFoods extends StatefulWidget{
+final String id;
+  final String name;
+  final String imgPath;
+  final String category;
+  final double price;
+  final double discount;
+  final double ratings;
+
+ BoughtFoods({this.id, this.name, this.imgPath, this.category, this.price, this.discount, this.ratings});
+
   @override 
   _BoughtFoodState createState() => _BoughtFoodState();
 }
@@ -16,7 +26,7 @@ class _BoughtFoodState extends State<BoughtFoods>{
           Container(
             height: 200,
             width: 340, 
-            child: Image.asset("assets/images/hashbrowns.jpg", fit: BoxFit.cover,),
+            child: Image.asset(widget.imgPath, fit: BoxFit.cover,),
           ),
           Positioned(
             left: 0.0,
@@ -47,7 +57,7 @@ class _BoughtFoodState extends State<BoughtFoods>{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Grits",
+                     widget.name,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -63,7 +73,7 @@ class _BoughtFoodState extends State<BoughtFoods>{
                         Icon(Icons.star, color: Colors.blue,size: 16,),
                         SizedBox(width:12),
                         Text(
-                          "(22 Reviews)",
+                          widget.ratings.toString(),
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 12,
@@ -76,7 +86,7 @@ class _BoughtFoodState extends State<BoughtFoods>{
                 Column(
                 children: <Widget>[
                   Text(
-                    "20",
+                    widget.price.toString(),
                     style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.orange,

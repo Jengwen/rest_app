@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homeScreen.dart';
+import 'screens/main_screen.dart';
 
 //create main app class
 class App extends StatelessWidget{
@@ -10,7 +10,7 @@ class App extends StatelessWidget{
     theme: ThemeData(
       primaryColor: Colors.yellowAccent
     ),
-    home: HomeScreen(),
+    home: MainScreen(),
   );
   }
 }
