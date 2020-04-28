@@ -52,7 +52,7 @@ class OrderCard extends StatelessWidget{
               children: <Widget>[
                 Text("Waffle", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5.0),
-                Text("2.99", style: TextStyle(fontSize: 16)),
+                Text("\u0024 2.99", style: TextStyle(fontSize: 16)),
                 SizedBox(height: 5.0),
                 Container(
                   height: 25,
