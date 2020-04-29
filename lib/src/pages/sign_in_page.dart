@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/src/widgets/button.dart';
 import '../pages/sign_up_page.dart';
 
 class SignInPage extends StatefulWidget{
@@ -80,22 +81,7 @@ Widget _buildPasswordField(){
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightBlueAccent,
-                  borderRadius: BorderRadius.circular(25)
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: Colors.white),
-                    ),
-                  ),
-              ),
+              Button(btnText: "Sign In"),
               Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
