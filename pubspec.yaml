@@ -50,6 +50,11 @@ flutter:
     - assets/images/waffle.jpg
   #  - images/a_dot_ham.jpeg
 
+
+analyzer:
+strong-mode: true
+language:
+enableSuperMixins: true
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

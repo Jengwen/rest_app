@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 class FoodModel extends Model {
   List<Food> _foods = [];
+  
   bool _isLoading = false;
 
   bool get isLoading {

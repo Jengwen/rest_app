@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/src/scoped-model/main_model.dart';
+import 'package:scoped_model/scoped_model.dart';
 import '../widgets/home_top_info.dart';
 import '../widgets/food_category.dart';
 import '../widgets/search_field.dart';
 import '../widgets/bought_foods.dart';
-//pass in food data
-import '../data/food_data.dart';
+//pass in food model
+
 import '../models/food_model.dart';
 
 //create homescreen class
@@ -15,12 +17,19 @@ class HomePage extends StatefulWidget{
 }
 
 //create list of foods from food data
-List <Food> _foods = foods;
+//List <Food> _foods = foods;
 
 //build homescreen that scaffolds what you see on the home screen
 
 class _HomePageState extends State<HomePage>{
+
   @override
+
+  void initState() {
+    // widget.foodModel.fetchFoods();
+    super.initState();
+  }
+  @override 
   Widget build(BuildContext context){
     return Scaffold(
       //scaffold the home screen view with widgets
@@ -55,9 +64,13 @@ class _HomePageState extends State<HomePage>{
            ],
            ),
            SizedBox(height:20),
-           Column(
-             children: _foods.map(_buildFoodItems).toList()
-           ),
+            ScopedModelDescendant<MainModel>(
+            builder: (BuildContext context, Widget child, MainModel model){
+              return Column(
+                children: model.foods.map(_buildFoodItems).toList(),
+              );
+            },
+          ),
         ]
       )
       );
