@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/src/pages/favorites_page.dart';
+import 'package:food_app/src/pages/food_search_page.dart';
 import 'package:food_app/src/pages/profile_page.dart';
 //Pages
 import '../pages/home_page.dart';
 import '../pages/order_page.dart';
 import '../pages/profile_page.dart';
-import '../pages/favorites_page.dart';
+import '../pages/food_search_page.dart';
 
 class MainScreen extends StatefulWidget{
   @override 
@@ -24,7 +24,7 @@ Widget currentPage;
 HomePage homePage;
 OrderPage orderPage;
 ProfilePage profilePage;
-FavoritesPage favoritesPage;
+FoodSearchPage favoritesPage;
 
   @override 
 
@@ -33,9 +33,9 @@ FavoritesPage favoritesPage;
     homePage = HomePage();
     orderPage = OrderPage();
     profilePage = ProfilePage();
-    favoritesPage = FavoritesPage();
+    favoritesPage = FoodSearchPage();
     pages =[
-      homePage, orderPage, favoritesPage, profilePage
+      homePage, favoritesPage, orderPage, profilePage
     ];
 
     currentPage = homePage;
@@ -58,14 +58,15 @@ FavoritesPage favoritesPage;
             icon: Icon(Icons.home),
             title: Text("Home")
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore),
+              title: Text("Find")
+              ),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
               title: Text("Order")
               ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              title: Text("Favorites")
-              ),
+          
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               title: Text("Profile")
